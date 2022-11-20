@@ -1,24 +1,42 @@
-# Compiled class file
-*.class
+#Папки
+.idea/
+.gradle/
+build/
+out/
+classes/
+log/
+logs/
+catalina*/
+target/
+tmp/
+ext*/
+ext/
+node_modules/
+.DS_Store
+dist
 
-# Log file
+#Расширения
 *.log
+*.retry
 
-# BlueJ files
-*.ctxt
+#JAVA
+*.iml
+*.ipr
+*.iws
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+#latex
+*.toc
+*.out
+*.synctex.gz
+*.aux
+*.lol
+*.idx
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+#Темп файлы
+*.*~
+~*
+*~
+*~*
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+#Исключения
+!.gitignore
