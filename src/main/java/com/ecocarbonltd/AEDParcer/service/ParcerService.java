@@ -16,9 +16,20 @@ import java.util.Map;
 @ConfigurationProperties
 @Slf4j
 public class ParcerService {
-    Map<String, String> currencyRates = new HashMap<>();
+    private Map<String, String> currencyRates = new HashMap<>();
+    private Map<String, String> currencies = new HashMap<>();
     @Value("${aeduri}")
     private String uri;
+
+    public ParcerService() {
+        this.currencies.put("USD", "دولار امريكي");
+        this.currencies.put("CNY", "يوان صيني");
+        this.currencies.put("EUR", "يورو");
+        this.currencies.put("RUB", "روبل روسي");
+        this.currencies.put("TRL", "ليرة تركية");
+        this.currencies.put("UZS", "سوم أوزبكستاني");
+        this.currencies.put("KZT", "تينغ كازاخستاني");
+    }
 
     public Map<String, String> getCourse(String date) {
         try {
@@ -32,15 +43,6 @@ public class ParcerService {
                     .execute()
                     .parse();
 
-            Map<String, String> cur = new HashMap<>();
-            cur.put("USD", "دولار امريكي");
-            cur.put("CNY", "يوان صيني");
-            cur.put("EUR", "يورو");
-            cur.put("RUB", "روبل روسي");
-            cur.put("TRL", "ليرة تركية");
-            cur.put("UZS", "سوم أوزبكستاني");
-            cur.put("KZT", "تينغ كازاخستاني");
-
             Elements trs = doc.getElementsByTag("tr");
             for (Element tr : trs) {
                 Elements tds = tr.getElementsByTag("td");
@@ -49,7 +51,7 @@ public class ParcerService {
                 }
                 var currency = tds.get(1).text();
                 var rate = tds.get(2).text();
-                cur.forEach((key, value) -> {
+                currencies.forEach((key, value) -> {
                     if (currency.equals(value)) {
                         currencyRates.put(key, rate);
                     }
