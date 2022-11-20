@@ -1,4 +1,4 @@
-package com.ecocarbonltd.AEDParcer.service;
+package com.ecocarbonltd.AEDParser.service;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.util.Map;
 @SpringBootTest
 class ParcerServiceTest {
     @Autowired
-    private ParcerService service;
+    private ParserService service;
 
     @Test
     @DisplayName("2022-11-1")
