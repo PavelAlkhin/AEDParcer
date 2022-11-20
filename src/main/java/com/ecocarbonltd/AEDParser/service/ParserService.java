@@ -1,4 +1,4 @@
-package com.ecocarbonltd.AEDParcer.service;
+package com.ecocarbonltd.AEDParser.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
@@ -15,13 +15,13 @@ import java.util.Map;
 @Service
 @ConfigurationProperties
 @Slf4j
-public class ParcerService {
+public class ParserService {
     private Map<String, String> currencyRates = new HashMap<>();
     private Map<String, String> currencies = new HashMap<>();
     @Value("${aeduri}")
     private String uri;
 
-    public ParcerService() {
+    public ParserService() {
         this.currencies.put("USD", "دولار امريكي");
         this.currencies.put("CNY", "يوان صيني");
         this.currencies.put("EUR", "يورو");
@@ -54,6 +54,7 @@ public class ParcerService {
                 currencies.forEach((key, value) -> {
                     if (currency.equals(value)) {
                         currencyRates.put(key, rate);
+                        log.info("FIND cur:{}:rate{}", key, rate);
                     }
                 });
             }
