@@ -1,47 +1,42 @@
-#Папки
-.idea/
-.gradle/
+HELP.md
+.gradle
 build/
-out/
-classes/
-log/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 logs/
-catalina*/
-target/
-tmp/
-ext*/
-ext/
-node_modules/
 .DS_Store
-dist
 
-#Расширения
-*.log
-*.retry
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
-#JAVA
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-#latex
-*.toc
-*.out
-*.synctex.gz
-*.aux
-*.lol
-*.idx
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-#Темп файлы
-*.*~
-~*
-*~
-*~*
+### VS Code ###
+.vscode/
 
-#Исключения
-!.gitignore
-.gradle/7.5.1/executionHistory/executionHistory.bin
-*.bin
-.gradle/7.5.1/executionHistory/executionHistory.lock
-*.bin
-*.bin
+gradle.properties
+amplicode.xml
