@@ -13,7 +13,7 @@ public class ParserRestController {
     private final ParserService service;
 
     @GetMapping("/{date}")
-    public Map<String, String> getCurrecies(@PathVariable String date){
+    public Map<String, String> getCurrencies(@PathVariable String date){
         return service.getCourse(date);
     }
 }
